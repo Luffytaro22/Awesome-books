@@ -26,6 +26,7 @@ function createBook(book) {
   /* Add Classes and properties */
   bookContainer.classList.add('books');
   removeButton.tabIndex = books.indexOf(book);
+  removeButton.name = book.title;
 
   /* Add text */
   pTitle.textContent = book.title;
@@ -37,6 +38,21 @@ function createBook(book) {
   bookContainer.appendChild(pAuthor);
   bookContainer.appendChild(removeButton);
   mainContainer.appendChild(bookContainer);
+
+  /* A remove book function */
+  function deleteBook() {
+    if (removeButton.name === book.title) {
+      bookContainer.remove();
+
+      /* Split and join the array */
+      const index = removeButton.tabIndex;
+      books = [...books.slice(0, index), ...books.slice(index + 1)];
+      localStorage.setItem('library', JSON.stringify(books));
+      }
+    }
+
+  /* Add a click listener to the remove button */
+  removeButton.addEventListener('click', deleteBook);
 }
 
 books.forEach((book) => {
