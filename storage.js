@@ -9,7 +9,7 @@ let books = [];
 if (localStorage.getItem('library')) {
   /* Reasign the books array to the localStorage library */
   books = JSON.parse(localStorage.getItem('library'));
-} 
+}
 
 function Book(title, author) {
   this.title = title;
@@ -50,8 +50,8 @@ function createBook(book) {
       const index = removeButton.tabIndex;
       books = [...books.slice(0, index), ...books.slice(index + 1)];
       localStorage.setItem('library', JSON.stringify(books));
-      }
     }
+  }
 
   /* Add a click listener to the remove button */
   removeButton.addEventListener('click', deleteBook);
