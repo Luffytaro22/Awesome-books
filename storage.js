@@ -22,6 +22,7 @@ function createBook(book) {
   const pTitle = document.createElement('p');
   const pAuthor = document.createElement('p');
   const removeButton = document.createElement('button');
+  const hr = document.createElement('hr');
 
   /* Add Classes and properties */
   bookContainer.classList.add('books');
@@ -37,6 +38,7 @@ function createBook(book) {
   bookContainer.appendChild(pTitle);
   bookContainer.appendChild(pAuthor);
   bookContainer.appendChild(removeButton);
+  bookContainer.appendChild(hr);
   mainContainer.appendChild(bookContainer);
 
   /* A remove book function */
