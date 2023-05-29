@@ -1,4 +1,7 @@
 const mainContainer = document.querySelector('#books-container');
+const titleInput = document.querySelector('#title');
+const authorInput = document.querySelector('#author');
+const submitButton = document.querySelector('#book-submit');
 
 let books = [];
 
@@ -28,3 +31,19 @@ function createBook() {
   bookContainer.appendChild(removeButton);
   mainContainer.appendChild(bookContainer);
 }
+
+function addBook() {
+  const book = new Book(titleInput.value, authorInput.value);
+  
+  /* If the library key exists */
+  if (localStorage.getItem('library')) {
+    /* Copy the library key to the books array */
+    books = JSON.parse(localStorage.getItem('library'));
+    localStorage.setItem('libray', JSON.stringify(books));
+  } else {
+    /* Just create a new library key */
+    localStorage.setItem('libray', JSON.stringify(books));
+  }
+}
+
+submitButton.add('click', addBook);
