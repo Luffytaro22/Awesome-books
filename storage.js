@@ -72,17 +72,11 @@ function addBook(event) {
     return;
   }
 
-  /* If the library key exists */
-  if (localStorage.getItem('library')) {
-    /* Copy the library key to the books array */
-    books.push(book);
-    localStorage.setItem('library', JSON.stringify(books));
-  } else {
-    books.push(book);
-    localStorage.setItem('library', JSON.stringify(books));
-  }
+  /* Copy the library key to the books array */
+  books.push(book);
+  localStorage.setItem('library', JSON.stringify(books));
 
-  form.reset(); 
+  form.reset();
   createBook(book);
 }
 
