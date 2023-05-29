@@ -3,6 +3,17 @@
   padding: 0;
 }
 
+body {
+  padding-left: 20px;
+}
+
+#books-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px 0;
+}
+
 #form-book {
   display: flex;
   flex-direction: column;
