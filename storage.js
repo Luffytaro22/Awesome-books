@@ -39,7 +39,9 @@ class Books {
     /* Add Classes and properties */
     bookContainer.classList.add('books');
     bookDetails.classList.add('books-details');
-    removeButton.tabIndex = this.books.indexOf(book);
+    const aut = book.author;
+    const tit = book.title;
+    removeButton.tabIndex = this.books.findIndex((obj) => obj.title === tit && obj.author === aut);
     removeButton.name = book.title;
 
     /* Add text */
@@ -56,14 +58,16 @@ class Books {
 
     /* A remove book arrow function */
     const deleteBook = () => {
-      if (removeButton.name === book.title) {
-        bookContainer.remove();
+      const index = removeButton.tabIndex;
+      bookContainer.remove();
 
-        /* Split and join the array */
-        const index = removeButton.tabIndex;
-        this.books = [...this.books.slice(0, index), ...this.books.slice(index + 1)];
-        localStorage.setItem('library', JSON.stringify(this.books));
-      }
+      /* Split and join the array */
+      this.books = [
+        ...this.books.slice(0, index),
+        ...this.books.slice(index + 1),
+      ];
+      localStorage.setItem('library', JSON.stringify(this.books));
+      this.displayBooks();
     };
 
     /* Add a click listener to the remove button */
@@ -72,6 +76,7 @@ class Books {
 
   /* A method that displays all the books elements */
   displayBooks() {
+    mainContainer.innerHTML = '';
     this.books.forEach((book) => {
       this.createBook(book);
     });
