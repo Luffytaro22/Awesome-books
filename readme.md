@@ -49,7 +49,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://luffytaro22.github.io/Capstone-Japan/)
+- [Live Demo Link](https://luffytaro22.github.io/Awesome-books/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -67,7 +67,7 @@ Clone this repository to your desired folder:
 `git clone git@github.com:Luffytaro22/Awesome-books.git`
 
 ### Deployment
-You can deploy this project using: [This Link](https://luffytaro22.github.io/Capstone-Japan/)
+You can deploy this project using: [This Link](https://luffytaro22.github.io/Awesome-books/)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
