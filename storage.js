@@ -9,8 +9,6 @@ class Books {
   /* The constructor accepts the title and author parameters */
   constructor(title, author) {
     this.books = [];
-    this.title = title;
-    this.author = author;
 
     if (localStorage.getItem('library')) {
       /* Reasign the books array to the localStorage library */
@@ -18,9 +16,14 @@ class Books {
     }
   }
 
+  info(title, author) {
+    this.title = title;
+    this.author = author;
+  }
+
   /* A method to save the info in the local storage */
   storage() {
-    this.books.push({title: `${this.title}`, author: `${this.author}`});
+    this.books.push({ title: `${this.title}`, author: `${this.author}` });
     localStorage.setItem('library', JSON.stringify(this.books));
   }
 
@@ -60,7 +63,7 @@ class Books {
         this.books = [...this.books.slice(0, index), ...this.books.slice(index + 1)];
         localStorage.setItem('library', JSON.stringify(this.books));
       }
-    }
+    };
 
     /* Add a click listener to the remove button */
     removeButton.addEventListener('click', deleteBook);
@@ -74,21 +77,16 @@ class Books {
   }
 };
 
-/* A extension of the main class that displays your added books */
-class myBooks extends Books {
-  constructor() {
-    super();
-  }
-}
-
-const myBook = new myBooks;
-myBook.displayBooks(); // Displays your added books.
+/* A instance of the class that displays the added books */
+const myBooks = new Books();
+myBooks.displayBooks();
 
 /* A function that is called when the user clicks the submit button */
 function addBook(event) {
   /* Create a new book */
-  const book = new Books(titleInput.value, authorInput.value);
-
+  const book = new Books();
+  book.info(titleInput.value, authorInput.value);
+  
   /* If the inputs has no values then form is not submmited */
   if (!titleInput.validity.valueMissing && !authorInput.validity.valueMissing) {
     event.preventDefault();
