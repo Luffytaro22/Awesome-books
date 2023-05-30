@@ -14,8 +14,6 @@ class Books {
       /* Reasign the books array to the localStorage library */
       this.books = JSON.parse(localStorage.getItem('library'));
     }
-
-    this.displayBooks();
   }
 
   storage() {
@@ -49,13 +47,14 @@ class Books {
     mainContainer.appendChild(bookContainer);
 
     /* A remove book function */
-    function deleteBook() {
+    const deleteBook = () => {
       if (removeButton.name === book.title) {
         bookContainer.remove();
 
         /* Split and join the array */
         const index = removeButton.tabIndex;
         this.books = [...this.books.slice(0, index), ...this.books.slice(index + 1)];
+        console.log(this.books);
         localStorage.setItem('library', JSON.stringify(this.books));
       }
     }
@@ -72,12 +71,9 @@ class Books {
 
 };
 
-
-
-
 function addBook(event) {
   /* Create a new book */
-  const book = new Book(titleInput.value, authorInput.value);
+  const book = new Books(titleInput.value, authorInput.value);
 
   /* If the inputs has no values then form is not submmited */
   if (!titleInput.validity.valueMissing && !authorInput.validity.valueMissing) {
@@ -86,12 +82,10 @@ function addBook(event) {
     return;
   }
 
-  /* Copy the library key to the books array */
-  books.push(book);
-  localStorage.setItem('library', JSON.stringify(books));
-
+  book.storage();
+  console.log(book.books);
   form.reset();
-  createBook(book);
+  book.createBook(book);
 }
 
 submitButton.addEventListener('click', addBook);
