@@ -38,6 +38,7 @@ class Books {
 
     /* Add Classes and properties */
     bookContainer.classList.add('books');
+    bookDetails.classList.add('books-details');
     removeButton.tabIndex = this.books.indexOf(book);
     removeButton.name = book.title;
 
