@@ -69,14 +69,14 @@ class Books {
     /* Add a click listener to the remove button */
     removeButton.addEventListener('click', deleteBook);
   }
-  
+
   /* A method that displays all the books elements */
   displayBooks() {
     this.books.forEach((book) => {
       this.createBook(book);
     });
   }
-};
+}
 
 /* A instance of the class that displays the added books */
 const myBooks = new Books();
