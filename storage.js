@@ -7,7 +7,7 @@ const form = document.querySelector('#form-book');
 /* The main Books class */
 class Books {
   /* The constructor accepts the title and author parameters */
-  constructor(title, author) {
+  constructor() {
     this.books = [];
 
     if (localStorage.getItem('library')) {
@@ -31,10 +31,10 @@ class Books {
   createBook(book) {
     /* Create elements */
     const bookContainer = document.createElement('div');
-    const pTitle = document.createElement('p');
+    const bookDetails = document.createElement('div');
+    const pTitle = document.createElement('h3');
     const pAuthor = document.createElement('p');
     const removeButton = document.createElement('button');
-    const hr = document.createElement('hr');
 
     /* Add Classes and properties */
     bookContainer.classList.add('books');
@@ -43,14 +43,14 @@ class Books {
 
     /* Add text */
     pTitle.textContent = book.title;
-    pAuthor.textContent = book.author;
+    pAuthor.textContent = `by ${book.author}`;
     removeButton.textContent = 'Remove';
 
     /* Append elements */
-    bookContainer.appendChild(pTitle);
-    bookContainer.appendChild(pAuthor);
+    bookDetails.appendChild(pTitle);
+    bookDetails.appendChild(pAuthor);
+    bookContainer.appendChild(bookDetails);
     bookContainer.appendChild(removeButton);
-    bookContainer.appendChild(hr);
     mainContainer.appendChild(bookContainer);
 
     /* A remove book arrow function */
@@ -86,7 +86,7 @@ function addBook(event) {
   /* Create a new book */
   const book = new Books();
   book.info(titleInput.value, authorInput.value);
-  
+
   /* If the inputs has no values then form is not submmited */
   if (!titleInput.validity.valueMissing && !authorInput.validity.valueMissing) {
     event.preventDefault();
