@@ -4,7 +4,9 @@ const authorInput = document.querySelector('#author');
 const submitButton = document.querySelector('#book-submit');
 const form = document.querySelector('#form-book');
 
+/* The main Books class */
 class Books {
+  /* The constructor accepts the title and author parameters */
   constructor(title, author) {
     this.books = [];
     this.title = title;
@@ -16,11 +18,13 @@ class Books {
     }
   }
 
+  /* A method to save the info in the local storage */
   storage() {
     this.books.push({title: `${this.title}`, author: `${this.author}`});
     localStorage.setItem('library', JSON.stringify(this.books));
   }
 
+  /* A method to creat each book element */
   createBook(book) {
     /* Create elements */
     const bookContainer = document.createElement('div');
@@ -46,7 +50,7 @@ class Books {
     bookContainer.appendChild(hr);
     mainContainer.appendChild(bookContainer);
 
-    /* A remove book function */
+    /* A remove book arrow function */
     const deleteBook = () => {
       if (removeButton.name === book.title) {
         bookContainer.remove();
@@ -54,7 +58,6 @@ class Books {
         /* Split and join the array */
         const index = removeButton.tabIndex;
         this.books = [...this.books.slice(0, index), ...this.books.slice(index + 1)];
-        console.log(this.books);
         localStorage.setItem('library', JSON.stringify(this.books));
       }
     }
@@ -63,14 +66,25 @@ class Books {
     removeButton.addEventListener('click', deleteBook);
   }
   
+  /* A method that displays all the books elements */
   displayBooks() {
     this.books.forEach((book) => {
       this.createBook(book);
     });
   }
-
 };
 
+/* A extension of the main class that displays your added books */
+class myBooks extends Books {
+  constructor() {
+    super();
+  }
+}
+
+const myBook = new myBooks;
+myBook.displayBooks(); // Displays your added books.
+
+/* A function that is called when the user clicks the submit button */
 function addBook(event) {
   /* Create a new book */
   const book = new Books(titleInput.value, authorInput.value);
@@ -82,9 +96,13 @@ function addBook(event) {
     return;
   }
 
+  /* Save the book in the array and the local storage */
   book.storage();
-  console.log(book.books);
+
+  /* Resets the form */
   form.reset();
+
+  /* Creates the new book element */
   book.createBook(book);
 }
 
