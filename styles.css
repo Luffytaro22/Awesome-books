@@ -47,6 +47,11 @@ footer {
   padding-left: 20px;
 }
 
+#form-container.hide,
+.hide {
+  display: none;
+}
+
 #nav-section {
   display: flex;
   gap: 20px;
