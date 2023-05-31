@@ -6,7 +6,6 @@
 }
 
 body {
-  padding-left: 20px;
   font-family: Tsukimi Rounded, sans-serif;
 }
 
@@ -29,12 +28,66 @@ input:focus {
   outline: none;
 }
 
+ul {
+  list-style: none;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 40px;
+  margin: 10px 10px;
+  border: 1px solid black;
+}
+
+main {
+  min-height: calc(100vh - (64px + 64px));
+}
+
+footer {
+  border: 1px solid black;
+  margin: 10px 10px;
+  padding: 10px 0;
+  padding-left: 20px;
+}
+
+section {
+  margin-top: 50px;
+}
+
+.hide {
+  display: none;
+}
+
+.change-color {
+  color: blue;
+}
+
+#nav-section {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-sections:hover {
+  cursor: pointer;
+}
+
+.nav-sections:not(:first-child) {
+  border-left: 1px solid black;
+  padding-left: 20px;
+}
+
+#date {
+  text-align: right;
+  margin-right: 10px;
+}
+
 #books-container {
   display: flex;
   flex-direction: column;
   border: 1px solid black;
   border-bottom: none;
-  margin: 30px 30%;
+  margin: 30px 10px;
 }
 
 .books {
@@ -68,10 +121,26 @@ input:focus {
   align-items: flex-end;
   justify-content: flex-start;
   gap: 20px;
-  width: 15%;
+  width: 25%;
+  margin-top: 30px;
 }
 
 #form-book input {
   width: 100%;
   padding: 5px 10px;
+}
+
+#contact h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+#contact-container {
+  margin-left: 10%;
+}
+
+#contact-list {
+  list-style: disc;
+  margin-top: 20px;
+  margin-left: 50px;
 }

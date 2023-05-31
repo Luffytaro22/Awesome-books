@@ -6,21 +6,52 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
   <script src="storage.js" defer></script>
+  <script src="date-menu.js" defer></script>
   <title>Awesome Books</title>
 </head>
 <body>
+  <header>
+    <p>Awesome Books</p>
+    <nav>
+      <ul id="nav-section">
+        <li class="nav-sections change-color">List</li>
+        <li class="nav-sections">Add New</li>
+        <li class="nav-sections">Contact</li>
+      </ul>
+    </nav>
+  </header>
   <main>
-    <h1>Awesome Books</h1>
-    <div id="books-container">
-    </div>
-    <div id="form-container">
-      <h2>Add a New Book</h2>
-      <form id="form-book">
-        <input type="text" id="title" placeholder="Title" required>
-        <input type="text" id="author" placeholder="Author" required>
-        <button type="submit" id="book-submit">Add Book</button>
-      </form>
-    </div>
+    <p id="date"></p>
+    <section id="books-section">
+      <h1>Awesome Books</h1>
+      <div id="books-container">
+      </div>
+    </section>
+    <section id="addBook-section"  class="hide">
+      <div id="form-container">
+        <h2>Add a New Book</h2>
+        <form id="form-book">
+          <input type="text" id="title" placeholder="Title" required>
+          <input type="text" id="author" placeholder="Author" required>
+          <button type="submit" id="book-submit">Add Book</button>
+        </form>
+      </div>
+    </section>
+    <section id="contact" class="hide">
+      <h2>Contact Information</h2>
+      <div id="contact-container">
+        <h3>Do you have any questions or you just want to say "Hello"?</h3>
+        <h3>You can reach out to us!</h3>
+        <ul id="contact-list">
+          <li>Our e-mail: mail@mail.com</li>
+          <li>Our phone number: 0043586534422</li>
+          <li>Our adress: Streetname 22, 84503 City, Country</li>
+        </ul>
+      </div>
+    </section>
   </main>
 </body>
+<footer>
+  <p>Copyright</p>
+</footer>
 </html>
