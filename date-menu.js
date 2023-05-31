@@ -6,33 +6,32 @@ const booksSection = document.querySelector('#books-section');
 const formSection = document.querySelector('#addBook-section');
 const contactSection = document.querySelector('#contact');
 
-const months = [ "January", "February", "March", "April", "May", "June", "July",
-  "August", "September", "October", "November", "December" ];
+const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
 const date = new Date();
 
 const month = months[date.getMonth()];
 const day = date.getDate();
 const year = date.getFullYear();
-const hours = date.getHours();
+let hours = date.getHours();
 const minutes = date.getMinutes();
 const seconds = date.getSeconds();
-const period = hours >= 12 ? "pm" : "am";
+const period = hours >= 12 ? 'pm' : 'am';
 
 /* Function to get the suffix for the day */
 function getOrdinalSuffix(day) {
   if (day >= 11 && day <= 13) {
-    return "th";
+    return 'th';
   }
   switch (day % 10) {
     case 1:
-      return "st";
+      return 'st';
     case 2:
-      return "nd";
+      return 'nd';
     case 3:
-      return "rd";
+      return 'rd';
     default:
-      return "th";
+      return 'th';
   }
 }
 
@@ -53,18 +52,30 @@ function showForm() {
   booksSection.classList.add('hide');
   formSection.classList.remove('hide');
   contactSection.classList.add('hide');
+
+  list.classList.remove('change-color');
+  contact.classList.remove('change-color');
+  addNew.classList.add('change-color');
 }
 
 function showContact() {
   booksSection.classList.add('hide');
   formSection.classList.add('hide');
   contactSection.classList.remove('hide');
+
+  list.classList.remove('change-color');
+  addNew.classList.remove('change-color');
+  contact.classList.add('change-color');
 }
 
 function showBooks() {
   booksSection.classList.remove('hide');
   formSection.classList.add('hide');
   contactSection.classList.add('hide');
+
+  addNew.classList.remove('change-color');
+  contact.classList.remove('change-color');
+  list.classList.add('change-color');
 }
 
 list.addEventListener('click', showBooks);

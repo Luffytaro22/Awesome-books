@@ -59,6 +59,10 @@ section {
   display: none;
 }
 
+.change-color {
+  color: blue;
+}
+
 #nav-section {
   display: flex;
   gap: 20px;
