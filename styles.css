@@ -40,6 +40,10 @@ header {
   border: 1px solid black;
 }
 
+main {
+  min-height: 100vh;
+}
+
 footer {
   border: 1px solid black;
   margin: 10px 10px;
@@ -47,7 +51,6 @@ footer {
   padding-left: 20px;
 }
 
-#form-container.hide,
 .hide {
   display: none;
 }
@@ -55,6 +58,10 @@ footer {
 #nav-section {
   display: flex;
   gap: 20px;
+}
+
+.nav-sections:hover {
+  cursor: pointer;
 }
 
 .nav-sections:not(:first-child) {
