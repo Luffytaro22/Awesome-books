@@ -6,7 +6,6 @@
 }
 
 body {
-  padding-left: 20px;
   font-family: Tsukimi Rounded, sans-serif;
 }
 
@@ -27,6 +26,42 @@ input {
 
 input:focus {
   outline: none;
+}
+
+ul {
+  list-style: none;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 40px;
+  margin: 10px 10px;
+  border: 1px solid black;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  border: 1px solid black;
+  width: 97vw;
+  margin: 10px 10px;
+  padding: 10px 0;
+  padding-left: 20px;
+}
+
+#nav-section {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-sections:not(:first-child) {
+  border-left: 1px solid black;
+  padding-left: 20px;
+}
+
+#date {
+  text-align: right;
 }
 
 #books-container {
