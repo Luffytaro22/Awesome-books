@@ -75,6 +75,7 @@ section {
 
 #date {
   text-align: right;
+  margin-right: 10px;
 }
 
 #books-container {
