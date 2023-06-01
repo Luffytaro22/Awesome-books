@@ -81,6 +81,22 @@ section {
   margin-right: 10px;
 }
 
+#books-section {
+  animation-name: books;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes books {
+  from {
+    margin-top: 100%;
+  }
+
+  to {
+    margin-top: 50px;
+  }
+}
+
 #books-container {
   display: flex;
   flex-direction: column;
