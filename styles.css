@@ -35,9 +35,8 @@ ul {
 header {
   display: flex;
   justify-content: space-between;
-  padding: 10px 40px;
-  margin: 10px 10px;
-  border: 1px solid black;
+  padding: 20px 40px;
+  border-bottom: 1px solid black;
 }
 
 main {
@@ -45,8 +44,7 @@ main {
 }
 
 footer {
-  border: 1px solid black;
-  margin: 10px 10px;
+  border-top: 1px solid black;
   padding: 10px 0;
   padding-left: 20px;
 }
@@ -135,7 +133,7 @@ section {
 }
 
 #contact-container {
-  margin-left: 10%;
+  margin-left: 5%;
 }
 
 #contact-list {
@@ -152,4 +150,14 @@ section {
   margin-bottom: 30px;
   padding-bottom: 10px;
   margin-top: 20px;
+}
+
+@media only screen and (min-width: 768px) {
+  #desktop-header {
+    display: flex;
+  }
+
+  #mobile-header {
+    display: none;
+  }
 }
