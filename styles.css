@@ -37,6 +37,7 @@ header {
   justify-content: space-between;
   padding: 20px 40px;
   border-bottom: 1px solid black;
+  font-size: 20px;
 }
 
 main {
@@ -159,5 +160,9 @@ section {
 
   #mobile-header {
     display: none;
+  }
+
+  #contact-container {
+    margin-left: 15%;
   }
 }
