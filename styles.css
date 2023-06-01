@@ -7,6 +7,7 @@
 
 body {
   font-family: Tsukimi Rounded, sans-serif;
+  color: antiquewhite;
 }
 
 h1 {
@@ -17,6 +18,10 @@ button {
   box-shadow: 1px 1px 0 1px black;
   padding: 5px 10px;
   font-family: Tsukimi Rounded, sans-serif;
+  color: antiquewhite;
+  background-color: brown;
+  border-radius: 20px;
+  border: none;
 }
 
 input {
@@ -38,16 +43,21 @@ header {
   padding: 20px 40px;
   border-bottom: 1px solid black;
   font-size: 20px;
+  background-color: rgba(245, 86, 97, 1);
+  box-shadow: 0 0 5px 5px black;
 }
 
 main {
-  min-height: calc(100vh - (64px + 64px));
+  min-height: calc(100vh - (64px));
+  background: linear-gradient(45deg, #120254, #7052c9, #120254);
+  padding-top: 20px;
 }
 
 footer {
   border-top: 1px solid black;
   padding: 10px 0;
   padding-left: 20px;
+  background-color: rgba(245, 86, 97, 1);
 }
 
 section {
@@ -113,7 +123,7 @@ section {
 }
 
 .books:nth-child(odd) {
-  background-color: #f2f2f2;
+  background-color: #f973cc;
 }
 
 .books-details {
@@ -195,10 +205,11 @@ section {
   font-size: 30px;
   display: flex;
   justify-content: space-around;
-  border-bottom: 1px solid black;
-  margin-bottom: 30px;
   padding-bottom: 10px;
-  margin-top: 20px;
+  padding-top: 20px;
+  margin-top: 0;
+  background-color: rgba(245, 86, 97, 1);
+  box-shadow: 0 0 5px 5px black;
 }
 
 @media only screen and (min-width: 768px) {
@@ -212,5 +223,13 @@ section {
 
   #contact-container {
     margin-left: 15%;
+  }
+
+  #footer {
+    display: block;
+  }
+
+  main {
+    min-height: calc(100vh - (64px + 64px));
   }
 }
