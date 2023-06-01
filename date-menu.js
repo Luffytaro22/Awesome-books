@@ -5,6 +5,9 @@ const contact = document.querySelector('.nav-sections:nth-child(3)');
 const booksSection = document.querySelector('#books-section');
 const formSection = document.querySelector('#addBook-section');
 const contactSection = document.querySelector('#contact');
+const iconList = document.querySelector('#icon-list');
+const iconBook = document.querySelector('#icon-book');
+const iconContact = document.querySelector('#icon-contact');
 
 const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
@@ -56,6 +59,10 @@ function showForm() {
   list.classList.remove('change-color');
   contact.classList.remove('change-color');
   addNew.classList.add('change-color');
+
+  iconList.classList.remove('change-color');
+  iconBook.classList.add('change-color');
+  iconContact.classList.remove('change-color');
 }
 
 function showContact() {
@@ -66,6 +73,10 @@ function showContact() {
   list.classList.remove('change-color');
   addNew.classList.remove('change-color');
   contact.classList.add('change-color');
+
+  iconList.classList.remove('change-color');
+  iconBook.classList.remove('change-color');
+  iconContact.classList.add('change-color');
 }
 
 function showBooks() {
@@ -76,8 +87,17 @@ function showBooks() {
   addNew.classList.remove('change-color');
   contact.classList.remove('change-color');
   list.classList.add('change-color');
+
+  iconList.classList.add('change-color');
+  iconBook.classList.remove('change-color');
+  iconContact.classList.remove('change-color');
 }
 
 list.addEventListener('click', showBooks);
+iconList.addEventListener('click', showBooks);
+
 addNew.addEventListener('click', showForm);
+iconBook.addEventListener('click', showForm);
+
 contact.addEventListener('click', showContact);
+iconContact.addEventListener('click', showContact);
